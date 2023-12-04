@@ -1,3 +1,4 @@
+//versão original
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -160,7 +161,17 @@ class FormularioState extends State<Formulario> {
                   // Definindo uma chave-valor Global
                   await prefs.setString('userName', nameController.text);
                 },
-              )
+              ),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Navega para a tela de perfil ao pressionar o botão
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  child: const Text('Ir para o Perfil'),
+                ),
+              ),
             ]))));
   }
 }
+//até aqui

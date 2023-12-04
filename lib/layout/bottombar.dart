@@ -14,7 +14,6 @@ class BottomBar extends StatefulWidget {
 }
 
 class BottomBarState extends State<BottomBar> {
-  
   int _selectedIndex = 0;
   String meuNome = "";
 
@@ -59,22 +58,16 @@ class BottomBarState extends State<BottomBar> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color.fromARGB(255, 172, 209, 240),
-                    Color.fromARGB(255, 87, 169, 236),
-                    Color.fromARGB(255, 11, 133, 233)
-                  ]
-                )
-              ),
+                  gradient: LinearGradient(colors: [
+                Color.fromARGB(255, 172, 209, 240),
+                Color.fromARGB(255, 87, 169, 236),
+                Color.fromARGB(255, 11, 133, 233)
+              ])),
               child: Text('Acessar recursos'),
             ),
             ListTile(
               title: const Row(
-                children: [
-                  Icon(Icons.home),
-                  Text(" Home")
-                ],
+                children: [Icon(Icons.home), Text(" Home")],
               ),
               onTap: () {
                 _onItemTapped(0);
@@ -83,10 +76,7 @@ class BottomBarState extends State<BottomBar> {
             ),
             ListTile(
               title: const Row(
-                children: [
-                  Icon(Icons.link),
-                  Text(" Links")
-                ],
+                children: [Icon(Icons.link), Text(" Links")],
               ),
               onTap: () {
                 _onItemTapped(1);
@@ -95,10 +85,7 @@ class BottomBarState extends State<BottomBar> {
             ),
             ListTile(
               title: const Row(
-                children: [
-                  Icon(Icons.photo),
-                  Text(" Imagens")
-                ],
+                children: [Icon(Icons.photo), Text(" Imagens")],
               ),
               onTap: () {
                 _onItemTapped(2);
@@ -107,10 +94,7 @@ class BottomBarState extends State<BottomBar> {
             ),
             ListTile(
               title: const Row(
-                children: [
-                  Icon(Icons.location_on),
-                  Text(" Geolocalização")
-                ],
+                children: [Icon(Icons.location_on), Text(" Geolocalização")],
               ),
               onTap: () {
                 _onItemTapped(3);
@@ -119,10 +103,7 @@ class BottomBarState extends State<BottomBar> {
             ),
             ListTile(
               title: const Row(
-                children: [
-                  Icon(Icons.music_video),
-                  Text(" Multimídia")
-                ],
+                children: [Icon(Icons.music_video), Text(" Multimídia")],
               ),
               onTap: () {
                 _onItemTapped(4);
@@ -132,9 +113,7 @@ class BottomBarState extends State<BottomBar> {
           ],
         ),
       ),
-      
       body: _widgetOptions[_selectedIndex],
     );
   }
-
 }
