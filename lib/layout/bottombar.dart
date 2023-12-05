@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_app/modules/resources/media/media_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../modules/home/screens/home.dart';
+import '../cep_screen.dart'; // Importe a tela de busca de CEP
 
 class BottomBar extends StatefulWidget {
+  const BottomBar({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return BottomBarState();
@@ -108,6 +111,16 @@ class BottomBarState extends State<BottomBar> {
               onTap: () {
                 _onItemTapped(4);
                 Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Row(
+                children: [Icon(Icons.search), Text(" Buscar CEP")],
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CepScreen()));
               },
             ),
           ],
